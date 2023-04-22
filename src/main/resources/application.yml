@@ -1,0 +1,25 @@
+server:
+  port: 8181
+
+# jdbc and jpa config
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+    username: root
+    password: root1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+
+#security constants
+#JWT Secret key is used to both sign and verify JWT token which is symmetric key cryptography
+jwt:
+  expiration: 50000
+  secret: asd6df7sd6f7sdf7s8df
+
+role:
+  Default: USER
